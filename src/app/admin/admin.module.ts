@@ -1,8 +1,14 @@
+import { MatTableModule } from '@angular/material/table';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FlightsListComponent } from './flights-list/flights-list.component';
 import { Routes,RouterModule } from '@angular/router';
 import { CreateFlightComponent } from './create-flight/create-flight.component';
+import { SearchFlightComponent } from './search-flight/search-flight/search-flight.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -16,17 +22,28 @@ const routes: Routes = [
         path: 'createFlight',
         component: CreateFlightComponent,
       },
-    ]
-
+      {
+        path: 'searchFlight',
+        component: SearchFlightComponent
+      },
+    ],
+    
   }]
 
 @NgModule({
   declarations: [
     FlightsListComponent,
-    CreateFlightComponent
+    CreateFlightComponent,
+    SearchFlightComponent,
+    SearchFlightComponent
   ],
   imports: [
     CommonModule,
+    MatTableModule,
+    MatInputModule,
+    MatFormFieldModule,
+    BrowserModule,
+    FormsModule,
     RouterModule.forChild(routes)
   ]
 })

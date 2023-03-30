@@ -1,0 +1,38 @@
+table {
+  width: 100%;
+  }
+  
+.tableDiv{
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.inputDiv{
+  margin-top: 1%;
+  margin-left: 2%;
+  display: block;
+
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+.mat-mdc-row .mat-mdc-cell {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+
+}
+
+.example-full-width{
+  margin-right: 13%;
+  width: 250px;
+}
+
+.example-full-width1{
+  width: 250px;
+}
+
+
+
+
