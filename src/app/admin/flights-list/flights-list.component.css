@@ -1,0 +1,62 @@
+page{
+    background-color: black;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    background-color: #d7fae3;
+    display: flex;
+    justify-content: left;
+	align-items: start;
+    flex-direction: column;
+
+  }
+  table {
+    width: 95%;
+    border-bottom: 3px solid black;
+  }
+  th,
+  td {
+    border: 3px solid black;
+    padding: 0.5rem;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+  }
+  th {
+    background-color: rgb(30, 109, 30);
+    color: white;
+  }
+  tr:hover {
+    background-color: #82d2d8;
+    cursor: pointer;
+  }
+  .highlight{
+    background: #11c9d6; /* green */
+  }
+  .button-container {
+    margin-bottom: 1rem;
+  }
+  .button-container button {
+    margin-right: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: rgb(30, 109, 30);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .button-container button:hover {
+    background-color: rgb(30, 109, 30);
+  }
+
+  .container {
+    overflow: auto;
+    height: 100vh;
+    width: 100vw;
+    margin: 10px;
+    padding: 15px;
+  }
