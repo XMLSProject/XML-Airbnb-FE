@@ -13,18 +13,23 @@ export class LoginLandingPageComponent {
 
   constructor(private router: Router,private loginRegisterService:LoginRegisterService) {}
 
-  public Username: string = "";
-  public Password: string = "";
+  public Username?: string
+  public Password?: string
   public lgd:LoggedIn = {
-    username: this.Username,
-    password: this.Password
+    username: "",
+    password: ""
   }
+
 
   registerNavigate(){
     this.router.navigate(['/register']);
   }
 
   public logIn(){
+
+  this.lgd.username = "" + this.Username
+  this.lgd.password = "" +this.Password
+  console.log(this.lgd)
    this.loginRegisterService.login(this.lgd)
   }
   updateData() {

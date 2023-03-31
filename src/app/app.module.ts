@@ -13,9 +13,7 @@ import { AuthInterception } from './model/auth.interceptor';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    LoginLandingPageComponent,
-    RegisterComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -27,13 +25,7 @@ import { AuthInterception } from './model/auth.interceptor';
     BrowserAnimationsModule,
     ReactiveFormsModule,
   ],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterception,
-      multi: true
-    }
-  ],
+ 
   bootstrap: [AppComponent]
 })
 export class AppModule { }

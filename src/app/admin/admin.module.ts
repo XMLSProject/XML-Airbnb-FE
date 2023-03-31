@@ -12,6 +12,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
 import { ReactiveFormsModule } from "@angular/forms";
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterception } from '../model/auth.interceptor';
+import { LoginLandingPageComponent } from '../login-landing-page/login-landing-page.component';
+import { RegisterComponent } from '../register/register.component';
 
 const routes: Routes = [
   {
@@ -38,7 +42,9 @@ const routes: Routes = [
     FlightsListComponent,
     CreateFlightComponent,
     SearchFlightComponent,
-    SearchFlightComponent
+    SearchFlightComponent,
+    LoginLandingPageComponent,
+    RegisterComponent,
   ],
   imports: [
     CommonModule,
@@ -51,6 +57,6 @@ const routes: Routes = [
     MatSortModule,
     ReactiveFormsModule,
     RouterModule.forChild(routes)
-  ]
+  ],
 })
 export class AdminModule { }
