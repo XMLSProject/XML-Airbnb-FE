@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { catchError, EMPTY } from 'rxjs';
+import { LoggedIn } from '../model/logged-in';
 import { LoginRegisterService } from '../service/login-register.service';
 
 @Component({
@@ -11,17 +13,22 @@ export class LoginLandingPageComponent {
 
   constructor(private router: Router,private loginRegisterService:LoginRegisterService) {}
 
-  public Username: string = "";
-  public Password: string = "";
+  public Username: string = "Lakaraca";
+  public Password: string = "lakaracar123";
+  public lgd:LoggedIn = {
+    username: this.Username,
+    password: this.Password
+  }
 
   registerNavigate(){
     this.router.navigate(['/register']);
   }
 
-  logIn(){
-    //Login
-    //this.toastr.error("Username or password not valid!")
-    //this.toastService.success("Successfully logged in!")
+  public logIn(){
+   this.loginRegisterService.login(this.lgd)
+  }
+  updateData() {
+    throw new Error('Method not implemented.');
   }
 
 }

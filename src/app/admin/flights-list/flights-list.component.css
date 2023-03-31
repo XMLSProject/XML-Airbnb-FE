@@ -10,7 +10,7 @@ body {
     background-color: #d7fae3;
     display: flex;
     justify-content: left;
-	align-items: start;
+	  align-items: start;
     flex-direction: column;
 
   }
