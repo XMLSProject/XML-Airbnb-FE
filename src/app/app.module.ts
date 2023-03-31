@@ -6,11 +6,14 @@ import { AppComponent } from './app.component';
 import { LoginLandingPageComponent } from './login-landing-page/login-landing-page.component';
 import { AdminModule } from './admin/admin.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RegisterComponent } from './register/register.component';
+import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginLandingPageComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -18,6 +21,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     AdminModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

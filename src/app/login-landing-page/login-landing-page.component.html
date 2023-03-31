@@ -7,11 +7,12 @@
 	<div class="container">
 		<div class="login-box">
 			<img>
-			<h2>Login</h2>
+			<h2>Login or <a class="clickable" (click)="registerNavigate()">register</a></h2>
+			
 			<form>
 				<div class="input-box">
 					<label for="username">Username:</label>
-					<input type="text" name="username" id="username" [(ngModel)]="Email">
+					<input type="text" name="username" id="username" [(ngModel)]="Username">
 				</div>
 				<div class="input-box">
 					<label for="password">Password:</label>
