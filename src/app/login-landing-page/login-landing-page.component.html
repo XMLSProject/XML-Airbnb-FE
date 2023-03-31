@@ -12,11 +12,11 @@
 			<form>
 				<div class="input-box">
 					<label for="username">Username:</label>
-					<input type="text" name="username" id="username" [(ngModel)]="Username">
+					<input type="text" name="username" id="username" [(ngModel)]="this.Username">
 				</div>
 				<div class="input-box">
 					<label for="password">Password:</label>
-					<input type="password" name="password" id="password" [(ngModel)]="Password">
+					<input type="password" name="password" id="password" [(ngModel)]="this.Password">
 				</div>
 				<input type="submit" value="Login" class="btn" (click)="logIn()">
 			</form>
