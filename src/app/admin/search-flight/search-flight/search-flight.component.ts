@@ -42,7 +42,6 @@ export class SearchFlightComponent implements AfterViewInit {
 
   validateSearch(input: string){
     const result = input.search(this.searchFlights)
-    console.log(result);
   }
 
 
