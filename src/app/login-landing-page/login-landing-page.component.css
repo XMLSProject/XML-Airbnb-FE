@@ -5,6 +5,14 @@ body {
 	font-family: Arial, sans-serif;
 }
 
+a{
+	color: rgb(34, 36, 172);
+	text-decoration:underline;
+}
+
+a:hover{
+	cursor: pointer;
+}
 
 .container {
 	display: flex;

@@ -11,6 +11,7 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
+import { ReactiveFormsModule } from "@angular/forms";
 
 const routes: Routes = [
   {
@@ -48,6 +49,7 @@ const routes: Routes = [
     FormsModule,
     MatIconModule,
     MatSortModule,
+    ReactiveFormsModule,
     RouterModule.forChild(routes)
   ]
 })

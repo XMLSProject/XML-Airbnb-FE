@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { LoginRegisterService } from '../service/login-register.service';
 
 @Component({
   selector: 'app-login-landing-page',
@@ -7,10 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginLandingPageComponent {
 
+  constructor(private router: Router,private loginRegisterService:LoginRegisterService) {}
 
-  public Email: string = "";
+  public Username: string = "";
   public Password: string = "";
 
+  registerNavigate(){
+    this.router.navigate(['/register']);
+  }
 
   logIn(){
     //Login
