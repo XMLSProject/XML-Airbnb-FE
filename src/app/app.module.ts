@@ -8,6 +8,8 @@ import { AdminModule } from './admin/admin.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterComponent } from './register/register.component';
 import { ReactiveFormsModule } from "@angular/forms";
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterception } from './model/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -20,10 +22,18 @@ import { ReactiveFormsModule } from "@angular/forms";
     FormsModule,
     AppRoutingModule,
     AdminModule,
+    HttpClientModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterception,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

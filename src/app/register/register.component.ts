@@ -15,10 +15,10 @@ export class RegisterComponent {
   
   registerForm = new FormGroup({
     name: new FormControl('', [
-      Validators.required,Validators.pattern('^[a-zA-Z ]+$')
+      Validators.required,Validators.pattern('^[A-Z][a-zA-Z ]+$')
     ]),
     surname: new FormControl('', [
-      Validators.required,Validators.pattern('^[a-zA-Z ]+$')
+      Validators.required,Validators.pattern('^[A-Z][a-zA-Z ]+$')
     ]),
     username: new FormControl('', [
       Validators.required,Validators.pattern('^[a-zA-Z0-9.]*$')
