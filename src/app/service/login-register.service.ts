@@ -3,6 +3,7 @@ import { catchError, EMPTY, Observable } from 'rxjs';
 import { LoggedIn } from '../model/logged-in';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import jwt_decode from 'jwt-decode';
+import { User } from '../model/user';
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +28,13 @@ export class LoginRegisterService {
     this.http.post(this.apiHost + 'login', login, { headers:this.headers }) .subscribe((data) => {
       localStorage.setItem("token",data.toString())
       const tokenInfo = this.getDecodedAccessToken(data.toString())
+    });
+    
+    // return this.http.post<LoggedIn>(this.apiHost + '/login', login, { headers: this.headers });
+  }
+  register(user: User) {
+    this.http.post(this.apiHost + 'users', user, { headers:this.headers }) .subscribe((data) => {
+      console.log(data)
     });
     
     // return this.http.post<LoggedIn>(this.apiHost + '/login', login, { headers: this.headers });

@@ -13,8 +13,8 @@ export class LoginLandingPageComponent {
 
   constructor(private router: Router,private loginRegisterService:LoginRegisterService) {}
 
-  public Username: string = "Lakaraca";
-  public Password: string = "lakaracar123";
+  public Username: string = "";
+  public Password: string = "";
   public lgd:LoggedIn = {
     username: this.Username,
     password: this.Password
