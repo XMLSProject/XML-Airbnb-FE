@@ -17,7 +17,7 @@
           <th>Time</th>
           <th>Taking Off</th>
           <th>Landing</th>
-          <th>Prize</th>
+          <th>Price</th>
           <th>Seats</th>
           <th>Free seats</th>
         </tr>
@@ -26,7 +26,7 @@
         <tr *ngFor="let flight of Flights;let ind = index" (click)="select(flight,ind)"
         [ngClass] = "{'highlight' : ind == selectedIndex}">
         <td>{{ flight.date }}</td>
-        <td>{{ flight.date.getHours() + " : " + flight.date.getMinutes()  }}</td>
+        <td>{{ flight.date.getHours() + " : " + flight.date.getMinutes() }}</td>
         <td>{{ flight.takingOff }}</td>
         <td>{{ flight.landing }}</td>
         <td>{{ flight.prize }}</td>

@@ -7,6 +7,14 @@ table {
   margin-right: 2%;
 }
 
+.mainDiv{
+  background-color: #d7fae3;
+  height: 100vh;
+  width: 100vw;
+  padding: 10px;
+  margin:2px;
+}
+
 .inputDiv{
   margin-top: 1%;
   margin-left: 2%;
@@ -21,7 +29,6 @@ th.mat-sort-header-sorted {
 .mat-mdc-row .mat-mdc-cell {
   border-bottom: 1px solid transparent;
   border-top: 1px solid transparent;
-
 }
 
 .example-full-width{

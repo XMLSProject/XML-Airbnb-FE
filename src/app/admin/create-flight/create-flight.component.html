@@ -1,1 +1,35 @@
-<p>create-flight works!</p>
+<html>
+  <head>
+    <title>Register Page</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Create new flight</h1>
+      <div class="label-class">
+        <label for="name" class="label-class">Date:</label>
+        <input (blur)="lostFoucs()"  type="date" id="date" name="date" [(ngModel)] = 'selectedDate'>
+
+        <label for="time">Select a time:</label>
+        <input (blur)="lostFoucs()" type="time" id="time" name="time" [(ngModel)] = 'selectedTime'>
+    </div>
+    <form [formGroup]="createFlightForm">
+        <label for="surname">Takeoff Location:</label>
+        <input type="text" id="takeofflocation" name="takeofflocation" required formControlName="takeoff">
+
+        <label for="username">Landing Location:</label>
+        <input type="text" id="landinglocation" name="landinglocation" required formControlName="landing">
+
+        <label for="password">Price in euros:</label>
+        <input type="number" id="price" name="price" required formControlName="price">
+
+        <label for="email">Capacity:</label>
+        <input type="number" id="capacity" name="capacity" required formControlName="capacity" > 
+
+        <div class="button-group">
+          <button [disabled]="!createFlightForm.valid || disebleDateAndTime" (click)="createFlight()" type="submit" >Create</button>
+          <button type="button" (click)="redirectToFlights()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

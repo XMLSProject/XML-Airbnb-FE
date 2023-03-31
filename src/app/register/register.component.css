@@ -1,24 +1,16 @@
 body {
+    background-image: url("planeBackground.png"); /* green color */
     font-family: Arial, sans-serif;
     background-size: cover;
-    background-color: #d7fae3;
     background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
   }
-
-  .label-class{
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-  }
   
   .container {
-    background-image: url("greenPlane.jpg");
-    background-position: center;
-    background-size: cover;
+    background-color: #b3eb4b ;
     display: flex;
     flex-direction: column;
     font-size: 14pt;
@@ -46,7 +38,6 @@ body {
   
   input {
     padding: 10px;
-    font-size: 15px;
     border-radius: 5px;
     border: none;
     margin-bottom: 20px;
@@ -74,12 +65,4 @@ body {
   button:enabled:hover {
     cursor: pointer;
     opacity: 0.8;
-  }
-
-
-  input[type="number"] {
-    border: 1px solid black; /* Add a border */
-    border-radius: 4px; /* Add border radius */
-    align-items: start;
-    width: 100px;
   }
