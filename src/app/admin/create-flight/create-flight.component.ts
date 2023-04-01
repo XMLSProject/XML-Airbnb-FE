@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { IFlightToCreate } from '../flights-list/model/IFlightToCreate';
+import { FlightsService } from '../service/flights.service';
 
 @Component({
   selector: 'app-create-flight',
@@ -9,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class CreateFlightComponent {
   
-  constructor(private router:Router){}
+  constructor(private router:Router, private flightsService: FlightsService){}
 
   public selectedDate:Date = new Date();
   public disebleDateAndTime:boolean = true;
@@ -36,7 +38,22 @@ export class CreateFlightComponent {
   }
 
   createFlight(){
+    const [hours, minutes] = this.selectedTime.split(":").map(Number)
+    const newDate = new Date(this.selectedDate);
+    newDate.setHours(hours)
+    newDate.setMinutes(minutes)
 
+    const flightToCreate: IFlightToCreate = {
+      takeoff_date: newDate,
+      takeoff_location: "" + this.createFlightForm.get('takeoff')?.value,
+      landing_location: "" + this.createFlightForm.get('landing')?.value,
+      price: parseFloat("" + this.createFlightForm.get('price')?.value),
+      capacity: parseInt("" + this.createFlightForm.get('capacity')?.value, 10)
+    };
+
+    this.flightsService.createFlight(flightToCreate)
+
+    
   }
 
   redirectToFlights(){
