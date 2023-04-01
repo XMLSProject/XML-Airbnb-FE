@@ -16,6 +16,8 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterception } from '../model/auth.interceptor';
 import { LoginLandingPageComponent } from '../login-landing-page/login-landing-page.component';
 import { RegisterComponent } from '../register/register.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 const routes: Routes = [
   {
@@ -56,6 +58,8 @@ const routes: Routes = [
     MatIconModule,
     MatSortModule,
     ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     RouterModule.forChild(routes)
   ],
 })
