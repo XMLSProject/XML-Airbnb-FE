@@ -32,6 +32,13 @@ export class LoginRegisterService {
     
     // return this.http.post<LoggedIn>(this.apiHost + '/login', login, { headers: this.headers });
   }
+  pdg() {
+    this.http.get(this.apiHost + 'all-flights', { headers:this.headers }) .subscribe((data) => {
+      console.log(data)
+    });
+    
+    // return this.http.post<LoggedIn>(this.apiHost + '/login', login, { headers: this.headers });
+  }
   register(user: User) {
     this.http.post(this.apiHost + 'users', user, { headers:this.headers  ,withCredentials: true  }) .subscribe((data) => {
       console.log(data)
