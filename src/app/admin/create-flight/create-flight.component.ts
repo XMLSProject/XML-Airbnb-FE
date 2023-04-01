@@ -13,7 +13,7 @@ export class CreateFlightComponent {
   
   constructor(private router:Router, private flightsService: FlightsService){}
 
-  public selectedDate:Date = new Date();
+  public selectedDate?:Date;
   public disebleDateAndTime:boolean = true;
   public selectedTime:string = '';
   
@@ -24,21 +24,22 @@ export class CreateFlightComponent {
     landing: new FormControl('', [
        Validators.required,Validators.pattern('^[a-zA-Z ]+$')]),
      price: new FormControl('', [
-       Validators.required,Validators.min(1),Validators.max(100)
+       Validators.required,Validators.min(1),Validators.max(10000)
      ]),
      capacity: new FormControl('', [
-       Validators.required,Validators.min(1),Validators.max(100)
+       Validators.required,Validators.min(1),Validators.max(400)
      ]),
     
   });
 
   lostFoucs(){
-    if(this.selectedTime != '')
+    if(this.selectedTime != '' && this.selectedDate != null && Date.parse(this.selectedDate.toString()) > Date.parse(new Date().toString()))
       this.disebleDateAndTime = false;
   }
 
   createFlight(){
-    const [hours, minutes] = this.selectedTime.split(":").map(Number)
+    const [hours, minutes] = this.selectedTime.split(":").map(Number);
+    if(this.selectedDate != null){
     const newDate = new Date(this.selectedDate);
     newDate.setHours(hours)
     newDate.setMinutes(minutes)
@@ -50,9 +51,11 @@ export class CreateFlightComponent {
       price: parseFloat("" + this.createFlightForm.get('price')?.value),
       capacity: parseInt("" + this.createFlightForm.get('capacity')?.value, 10)
     };
+    
 
     this.flightsService.createFlight(flightToCreate)
-
+  }
+    this.router.navigate(['/admin/flights']);
     
   }
 
