@@ -29,7 +29,6 @@ export class LoginLandingPageComponent {
 
   this.lgd.username = "" + this.Username
   this.lgd.password = "" +this.Password
-  console.log(this.lgd)
    this.loginRegisterService.login(this.lgd)
   }
   updateData() {

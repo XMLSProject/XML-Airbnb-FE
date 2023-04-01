@@ -1,0 +1,31 @@
+nav {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    font-size: 20px;
+    padding: 5px;
+  }
+
+.login-logout{
+    justify-content:end;
+}
+
+a{
+    color:white;
+    text-decoration: none;
+    border: 2px solid white;
+    padding: 5px;
+    margin: 5px;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-right {
+    display: flex;
+    align-items: center;
+  }

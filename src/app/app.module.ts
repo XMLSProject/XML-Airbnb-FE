@@ -12,11 +12,14 @@ import { FlightsComponent } from './shared/flights/flights.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
+import { ToastrModule } from 'ngx-toastr';
+import { NavBarComponent } from './shared/nav-bar-component/nav-bar-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FlightsComponent
+    FlightsComponent,
+    NavBarComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,14 +32,17 @@ import { MatTableModule } from '@angular/material/table';
     ReactiveFormsModule,
     MatIconModule,
     MatSortModule,
-    MatTableModule
+    MatTableModule,
+    ToastrModule.forRoot()
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterception,
-      multi: true
+      multi: true,
+      
     }
+    
   ],
   bootstrap: [AppComponent]
 })
