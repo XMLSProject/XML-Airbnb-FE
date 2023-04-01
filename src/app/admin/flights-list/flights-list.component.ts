@@ -1,5 +1,5 @@
 import { ImageLoader } from '@angular/common';
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FlightsService } from '../service/flights.service';
 import { IListFlight } from './model/IListFlight';
@@ -9,15 +9,27 @@ import { IListFlight } from './model/IListFlight';
   templateUrl: './flights-list.component.html',
   styleUrls: ['./flights-list.component.css']
 })
-export class FlightsListComponent {
+export class FlightsListComponent implements OnInit{
 
 constructor(private router: Router,private flightService:FlightsService) {}
 
-testFlight:IListFlight = {id:-1,date: new Date(2023,3,30,12,30,0),takingOff:"London",landing:"Belgrade",prize:200,
-seats:300,freeSeats:14}
-Flights:IListFlight[] = [this.testFlight];
+
+
+  
+
+Flights:IListFlight[] = [];
 public selectedFlight:IListFlight = <IListFlight>{};
 public selectedIndex:number = -1;
+
+
+ngOnInit(): void {
+  this.flightService.getFlights().subscribe((flights) => {
+    this.Flights = flights; // prints the list of flights to the console
+    this.Flights.forEach(flight => {
+      flight.takeoff_date = new Date(Date.parse(flight.takeoff_date.toString()))
+    });
+  });
+}
 
 select(flight:IListFlight,ind:number){
   this.selectedFlight = flight;
@@ -33,8 +45,11 @@ select(flight:IListFlight,ind:number){
   }
 
   deleteFlight(){
-    //if(this.selectedIndex != -1)
-    //service.deleteFlight(this.selectedFlight.id);
+    if(this.selectedIndex != -1)
+      this.flightService.deleteFlight(this.selectedFlight.id);
+    this.ngOnInit();
+    
+    
   }
 
   createFlight(){
