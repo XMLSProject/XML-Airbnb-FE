@@ -16,10 +16,12 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterception } from '../model/auth.interceptor';
 import { LoginLandingPageComponent } from '../login-landing-page/login-landing-page.component';
 import { RegisterComponent } from '../register/register.component';
+import { AuthGuard } from '../model/auth.guard';
 
 const routes: Routes = [
   {
     path: 'admin',
+    canActivate: [AuthGuard],
     children: [
       {
         path: 'flights',

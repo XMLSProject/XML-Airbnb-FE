@@ -32,6 +32,10 @@ export class LoginLandingPageComponent {
   console.log(this.lgd)
    this.loginRegisterService.login(this.lgd)
   }
+  public letiletiletibjeligolube(){
+
+     this.loginRegisterService.pdg()
+    }
   updateData() {
     throw new Error('Method not implemented.');
   }
