@@ -25,9 +25,12 @@ export class LoginRegisterService {
     }
   }
   login(login: LoggedIn) {
+    
     this.http.post(this.apiHost + 'login', login, { headers:this.headers }) .subscribe((data) => {
+      
       localStorage.setItem("token",data.toString())
       const tokenInfo = this.getDecodedAccessToken(data.toString())
+      console.log(tokenInfo.role);
       localStorage.setItem("role",tokenInfo.role)
     });
     

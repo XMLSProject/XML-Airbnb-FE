@@ -5,18 +5,17 @@ import { CommonModule } from '@angular/common';
 import { FlightsListComponent } from './flights-list/flights-list.component';
 import { Routes,RouterModule } from '@angular/router';
 import { CreateFlightComponent } from './create-flight/create-flight.component';
-import { SearchFlightComponent } from './search-flight/search-flight/search-flight.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import {MatIconModule} from '@angular/material/icon';
+import {  MatIconModule} from '@angular/material/icon';
 import { ReactiveFormsModule } from "@angular/forms";
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { AuthInterception } from '../model/auth.interceptor';
-import { LoginLandingPageComponent } from '../login-landing-page/login-landing-page.component';
-import { RegisterComponent } from '../register/register.component';
-import { AuthGuard } from '../model/auth.guard';
+import { AuthInterception } from '../shared/model/auth.interceptor';
+import { LoginLandingPageComponent } from '../shared/login-landing-page/login-landing-page.component';
+import { RegisterComponent } from '../shared/register/register.component';
+import { AuthGuard } from '../shared/model/auth.guard';
 
 const routes: Routes = [
   {
@@ -31,10 +30,6 @@ const routes: Routes = [
         path: 'createFlight',
         component: CreateFlightComponent,
       },
-      {
-        path: 'searchFlight',
-        component: SearchFlightComponent
-      },
     ],
     
   }]
@@ -43,8 +38,6 @@ const routes: Routes = [
   declarations: [
     FlightsListComponent,
     CreateFlightComponent,
-    SearchFlightComponent,
-    SearchFlightComponent,
     LoginLandingPageComponent,
     RegisterComponent,
   ],

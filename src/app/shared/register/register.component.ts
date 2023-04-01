@@ -11,11 +11,6 @@ import { LoginRegisterService } from '../service/login-register.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-  public Name: string = "";
-  public Surname: string = "";
-  public Username: string = "";
-  public Password: string = "";
-  public Email: string = "";
   constructor(private router: Router,private loginRegisterService:LoginRegisterService) {}
   
   registerForm = new FormGroup({
@@ -35,20 +30,17 @@ export class RegisterComponent {
       Validators.required,Validators.email
     ])
   });
-  public user:User = {
-    name: ""+this.registerForm.getRawValue().name,
-    surname: ""+this.registerForm.get('surname')?.value,
-    username: ""+this.registerForm.get('username')?.value,
-    password: ""+this.registerForm.get('password')?.value,
-    email: ""+this.registerForm.get('email')?.value
-  }
+  
   public register(){
-      this.user.name ="" + this.registerForm.getRawValue().name 
-      this.user.surname ="" + this.registerForm.getRawValue().surname 
-      this.user.username ="" + this.registerForm.getRawValue().username 
-      this.user.password ="" + this.registerForm.getRawValue().password 
-      this.user.email ="" + this.registerForm.getRawValue().email 
-      this.loginRegisterService.register(this.user)
+      const user:User = 
+      {
+      name :"" + this.registerForm.get('name')?.value ,
+      surname :"" + this.registerForm?.get('surname')?.value,
+      username :"" + this.registerForm?.get('username')?.value,
+      password :"" + this.registerForm?.get('password')?.value ,
+      email :"" + this.registerForm?.get('email')?.value
+      } 
+      this.loginRegisterService.register(user)
   }
 
   redirectToLogin(){

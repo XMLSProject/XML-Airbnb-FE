@@ -3,7 +3,7 @@ import {AfterViewInit, Component, ViewChild} from '@angular/core';
 import {MatSort, Sort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 
-export interface SearchFlightList {
+export interface Flights {
   id:number;
   date:Date;
   takingOff:string;
@@ -13,7 +13,7 @@ export interface SearchFlightList {
   //price: number;
 }
 
-const ELEMENT_DATA: SearchFlightList[] = [
+const ELEMENT_DATA: Flights[] = [
   {id:-1, date: new Date(2023,3,31, 12,30,0), takingOff:"London", landing:"Belgrade", seats:300, freeSeats:14},
   {id: 1, date: new Date(2023,4,30, 12,20,0), takingOff:"Sydney", landing:"Tokyo", seats:545, freeSeats:57},
   {id: 2, date: new Date(2023,5,22, 11,30,0), takingOff:"Lisabon", landing:"Los Angeles", seats:600, freeSeats:122},
@@ -21,12 +21,12 @@ const ELEMENT_DATA: SearchFlightList[] = [
 ];
 
 @Component({
-  selector: 'app-search-flight',
-  templateUrl: './search-flight.component.html',
-  styleUrls: ['./search-flight.component.css']
+  selector: 'app-flights',
+  templateUrl: './flights.component.html',
+  styleUrls: ['./flights.component.css']
 })
 
-export class SearchFlightComponent implements AfterViewInit {
+export class FlightsComponent implements AfterViewInit {
 
   searchFlights: string = "";
   displayedColumns: string[] = ['date', 'time', 'takingOff', 'landing', 'seats', 'freeSeats'];
