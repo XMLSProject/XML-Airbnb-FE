@@ -1,0 +1,71 @@
+table {
+  width: 100%;
+  }
+  
+.tableDiv{
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: 1%;
+  
+}
+
+.mainDiv{
+  overflow: auto;
+}
+
+.mainDiv{
+  background-color: #d7fae3;
+  height: 100vh;
+  width: 100vw;
+  padding: 10px;
+  margin:2px;
+}
+
+.inputDiv{
+  margin-top: 1%;
+  margin-left: 2%;
+  display: block;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+.mat-mdc-row .mat-mdc-cell {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+}
+
+.example-full-width{
+  margin-right: 10%;
+  width: 250px;
+}
+
+.example-full-width1{
+  
+  width: 250px;
+}
+
+
+/* searchBox */
+
+*{
+  box-sizing: border-box;
+}
+
+.btn-search{
+  margin-left: 6%;
+  width: 50px;
+  height: 50px;
+  border-style: none;
+  cursor: pointer;
+  border-radius: 50%;
+  color:#0e0d0d ;
+  background-color:transparent;
+  pointer-events: painted;  
+}
+
+
+
+
+

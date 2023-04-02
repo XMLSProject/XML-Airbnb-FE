@@ -1,52 +1,84 @@
 <div class="mainDiv">
-    <!-- <div class="inputDiv">
-        <mat-form-field class="example-full-width">
-            <mat-label >Search </mat-label>
-                <input matInput placeholder="Ex. 12.02.2022" [(ngModel)]="searchNumberPassengers" (keyup)="validateSearch(searchDate)">
+    <div class="inputDiv">
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Takeoff date</mat-label>
+            <input matInput [(ngModel)]="flight.date" [matDatepicker]="picker" >
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
 
-    </div> -->
+        <mat-form-field class="example-full-width">
+            <mat-label >By takeoff  </mat-label>
+                <input matInput placeholder="Ex. Paris" [(ngModel)]="flight.takingOff" >
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label >By destination </mat-label>
+                <input matInput placeholder="Ex. Belgrade" [(ngModel)]="flight.landing" >
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width1">
+            <mat-label >By number of passengers </mat-label>
+                <input type="number" matInput placeholder="Ex. 120" [(ngModel)]="flight.seats" >
+        </mat-form-field>
+
+        <button class="btn-search" (click)="searchFlights()"><mat-icon><span class="material-symbols-outlined">
+            search_check
+        </span></mat-icon></button>
+
+    </div>
     
 
-    <div class="search-box">
+    <!-- <div class="search-box">
         <button class="btn-search"><mat-icon><span class="material-symbols-outlined">
             search_check
             </span></mat-icon></button>
         <input type="text" [(ngModel)] = "searchFlights" (keyup)="validateSearch(searchFlights)" class="input-search" placeholder="Search flights">
-    </div>
+    </div> -->
 
     <div class="tableDiv">
         <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)" class="mat-elevation-z8">
 
-            <ng-container matColumnDef="date">
+            <!-- <ng-container matColumnDef="date">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
             <td mat-cell *matCellDef="let element"> {{element.date.getDate() + "." + element.date.getMonth() + "." + element.date.getFullYear() + "."}} </td>
+            </ng-container> -->
+
+            <ng-container matColumnDef="takeoff_date">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Takeoff Date and Time </th>
+                <td mat-cell *matCellDef="let element"> {{element.takeoff_date | date : 'dd.MM.yyyy. /// HH:mm' }} </td>
             </ng-container>
         
-            <ng-container matColumnDef="time">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Time </th>
-            <td mat-cell *matCellDef="let element"> {{element.date.getHours() + ":" + element.date.getMinutes()}} </td>
+            <ng-container matColumnDef="landing_date">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Landing Date and Time </th>
+            <td mat-cell *matCellDef="let element"> {{element.landing_date | date : 'dd.MM.yyyy. /// HH:mm'}} </td>
             </ng-container>
         
-            <ng-container matColumnDef="takingOff">
+            <ng-container matColumnDef="takeoff_location">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> From </th>
-            <td mat-cell *matCellDef="let element"> {{element.takingOff}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.takeoff_location}} </td>
             </ng-container>
         
-            <ng-container matColumnDef="landing">
+            <ng-container matColumnDef="landing_location">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Destination </th>
-            <td mat-cell *matCellDef="let element"> {{element.landing}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.landing_location}} </td>
             </ng-container>
 
-            <ng-container matColumnDef="seats">
+            <ng-container matColumnDef="capacity">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Seats </th>
-                <td mat-cell *matCellDef="let element"> {{element.seats}} </td>
+                <td mat-cell *matCellDef="let element"> {{element.capacity}} </td>
             </ng-container>
 
-            <ng-container matColumnDef="freeSeats">
+            <ng-container matColumnDef="available_seats">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Free Seats </th>
-            <td mat-cell *matCellDef="let element"> {{element.freeSeats}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.available_seats}} </td>
             </ng-container>
+
+            <ng-container matColumnDef="price">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Price </th>
+                <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+                </ng-container>
         
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
