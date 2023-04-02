@@ -8,17 +8,22 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterception } from './shared/model/auth.interceptor';
-import { FlightsComponent } from './shared/flights/flights.component';
+import { SearchFlightComponent } from './shared/flights/flights.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from "@angular/material/form-field";
 import { ToastrModule } from 'ngx-toastr';
 import { NavBarComponent } from './shared/nav-bar-component/nav-bar-component.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    FlightsComponent,
+    SearchFlightComponent,
     NavBarComponent,
   ],
   imports: [
@@ -33,6 +38,10 @@ import { NavBarComponent } from './shared/nav-bar-component/nav-bar-component.co
     MatIconModule,
     MatSortModule,
     MatTableModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     ToastrModule.forRoot()
   ],
   providers: [

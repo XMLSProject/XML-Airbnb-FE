@@ -1,4 +1,4 @@
-import { Flight } from './../admin/flights-list/model/FlightModel';
+import { Flight } from 'src/app/admin/flights-list/model/FlightModel';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
