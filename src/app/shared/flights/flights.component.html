@@ -3,14 +3,15 @@
 
         <!-- <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>By date</mat-label>
-            <input matInput [(ngModel)]="flight.date" [matDatepicker]="picker" >
+            <input matInput type="date" [(ngModel)]="flight.date" [matDatepicker]="picker" >
             <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field> -->
 
+        
         <mat-form-field class="example-full-width">
             <mat-label >By date  </mat-label>
-                <input type="date" matInput placeholder="Ex. Paris" [(ngModel)]="flight.date" >
+                <input type="date" id="dateInput" matInput [(ngModel)]="flight.date" >
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
@@ -34,14 +35,6 @@
 
     </div>
     
-
-    <!-- <div class="search-box">
-        <button class="btn-search"><mat-icon><span class="material-symbols-outlined">
-            search_check
-            </span></mat-icon></button>
-        <input type="text" [(ngModel)] = "searchFlights" (keyup)="validateSearch(searchFlights)" class="input-search" placeholder="Search flights">
-    </div> -->
-
     <div class="tableDiv">
         <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)" class="mat-elevation-z8">
 
