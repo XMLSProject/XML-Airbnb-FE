@@ -17,7 +17,7 @@ export class FlightService {
     return this.http.get<Flight[]>(this.apiHost + 'all-flights', {headers: this.headers});
   }
 
-  searchFlights(takeOffDate: any = "", takeOff: string = "", destination: string = "", numberOfPassengers: number = 0): Observable<Flight[]> {
+  searchFlights(takeOffDate: string = "", takeOff: string = "", destination: string = "", numberOfPassengers: number = 0): Observable<Flight[]> {
     return this.http.get<Flight[]>(this.apiHost + "search", {params: new HttpParams().set('takeoffDate', takeOffDate).set('takeoffLocation', takeOff).set('landingLocation', destination)
     .set('passengerCount', numberOfPassengers)});
   }
