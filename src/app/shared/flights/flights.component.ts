@@ -21,11 +21,17 @@ export class SearchFlightComponent implements AfterViewInit, OnInit {
   public dataSource = new MatTableDataSource<Flight>();
   public flight: Flight = new Flight;
   public flights: Flight[] = [];
+  public selectedFlight = new Flight;
+  public amountOfTickets = 0;
+  public btnDisable = true;
 
   constructor(private _liveAnnouncer: LiveAnnouncer, private flightService: FlightService) {}
 
   ngOnInit(): void {
     this.showAllFlights();
+    if (localStorage.getItem('role') == "User") {
+      this.btnDisable = false
+    }
   }
 
   @ViewChild(MatSort) sort!: MatSort;
@@ -62,13 +68,24 @@ export class SearchFlightComponent implements AfterViewInit, OnInit {
     })
   }
 
-  
+  public selectFlight(flight: Flight) {
+    this.selectedFlight = flight;
+    console.log(this.selectedFlight)
+  }
 
-  
+  public buyTickets(selectedFlight: Flight, amount: number) {
+    const token = localStorage.getItem('token')
+    localStorage.setItem('token', "" + token)
+    if (selectedFlight.id == "") {
+      console.log("Odaberi let")
+    } else if (amount === 0) {
+      console.log("Odaberi karte")
+    } else {
 
-
-
-
+      this.flightService.buyTickets(selectedFlight.id, amount)
+    }
+    window.location.reload()
+  }
 
 }
 

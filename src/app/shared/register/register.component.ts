@@ -41,6 +41,7 @@ export class RegisterComponent {
       email :"" + this.registerForm?.get('email')?.value
       } 
       this.loginRegisterService.register(user)
+      this.redirectToLogin()
   }
 
   redirectToLogin(){

@@ -22,6 +22,10 @@ ngOnInit(): void {
   this.flightService.getFlights().subscribe((flights) => {
     this.Flights = flights; // prints the list of flights to the console
     this.Flights.forEach(flight => {
+      console.log(flight.available_seats)
+      if (flight.available_seats == 0) {
+        console.log("Nasaoooooooo")
+      }
       flight.takeoff_date = new Date(Date.parse(flight.takeoff_date.toString()))
     });
   });

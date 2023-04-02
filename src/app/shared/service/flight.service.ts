@@ -22,4 +22,17 @@ export class FlightService {
     .set('passengerCount', numberOfPassengers)});
   }
 
+  buyTickets(flightID: any, amount: number) {
+    const body = {
+      flightID: flightID,
+      amount: amount
+    }
+    //headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
+    console.log(body.flightID)
+    console.log(body.amount)
+    return this.http.post(this.apiHost + "flights/buy-tickets", body, { headers: this.headers}).subscribe((data) => {
+      console.log(data)
+    })
+  }
+
 }

@@ -81,8 +81,18 @@
                 </ng-container>
         
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" [class.selected-row]="row === selectedFlight" (click)="selectFlight(row)"></tr>
         </table>
+    </div>
+
+    <div class="input-buy" *ngIf="!btnDisable">
+        <mat-form-field class="example-full-width1">
+            <mat-label >Amount of tickets </mat-label>
+                <input type="number" matInput placeholder="Ex. 5" [(ngModel)]="amountOfTickets" >
+        </mat-form-field>
+        <div class="button-container">
+            <button id="buy-btn"  (click)="buyTickets(this.selectedFlight, this.amountOfTickets)">BUY TICKETS</button>
+          </div>
     </div>
   
 </div>

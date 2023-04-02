@@ -18,6 +18,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { NavBarComponent } from './shared/nav-bar-component/nav-bar-component.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { UserModule } from './user/user/user.module';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     FormsModule,
     AppRoutingModule,
     AdminModule,
+    UserModule,
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,

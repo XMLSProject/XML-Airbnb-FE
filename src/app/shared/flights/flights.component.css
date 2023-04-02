@@ -1,11 +1,106 @@
-body {
-  overflow: hidden; /* Hide scrollbars */
-}
 
 table {
     width: 100%;
     }
     
+  .tableDiv{
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 1%;
+    
+  }
+
+  
+ 
+  .input-buy {
+    margin-top: 1%;
+    margin-left: 2%;
+    display: flex;
+  }
+  
+  th.mat-sort-header-sorted {
+    color: black;
+  }
+  
+  
+  .mat-mdc-row:hover .mat-mdc-cell {
+    border-color: currentColor;
+    cursor: pointer;
+  }
+
+  .selected-row {
+    background-color: #d0e4f7;
+  }
+
+  .button-container {
+    margin-left: 2%;
+    margin-top: 1%;
+  }
+  .button-container button {
+    margin-right: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: rgb(30, 109, 30);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .button-container button:hover {
+    background-color: rgb(30, 109, 30);
+  }
+  
+  
+  /* searchBox */
+  
+  *{
+    box-sizing: border-box;
+  }
+  
+  body{
+    margin: 0px;
+    padding: 0px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #130f40;
+  
+  }
+  .search-box{
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: 78%;
+  }
+  .input-search{
+    height: 50px;
+    width: 50px;
+    border-style: none;
+    padding: 10px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    outline: none;
+    border-radius: 25px;
+    transition: all .5s ease-in-out;
+    background-color: rgb(30, 109, 30);;
+    padding-right: 40px;
+    color:#0c0c0c;
+  }
+  .input-search::placeholder{
+    color:rgba(8, 8, 8, 0.5);
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 100;
+  }
+  
+
+
+  
+  
 .tableDiv{
   margin-left: 2%;
   margin-right: 2%;
