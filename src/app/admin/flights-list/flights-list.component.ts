@@ -13,10 +13,6 @@ export class FlightsListComponent implements OnInit{
 
 constructor(private router: Router,private flightService:FlightsService) {}
 
-
-
-  
-
 Flights:IListFlight[] = [];
 public selectedFlight:IListFlight = <IListFlight>{};
 public selectedIndex:number = -1;

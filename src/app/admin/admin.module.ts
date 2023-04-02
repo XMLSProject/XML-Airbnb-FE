@@ -31,6 +31,7 @@ const routes: Routes = [
         component: CreateFlightComponent,
       },
     ],
+    data: {roles:['Admin']}
     
   }]
 
