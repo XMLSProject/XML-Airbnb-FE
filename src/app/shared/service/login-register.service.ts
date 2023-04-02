@@ -54,7 +54,7 @@ export class LoginRegisterService {
     // return this.http.post<LoggedIn>(this.apiHost + '/login', login, { headers: this.headers });
   }
   register(user: User) {
-    this.http.post(this.apiHost + 'users', user, { headers:this.headers  ,withCredentials: true  }) .subscribe((data) => {
+    this.http.post(this.apiHost + 'users', user, { headers:this.headers  }) .subscribe((data) => {
       console.log(data)
     });
     
