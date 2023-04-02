@@ -5,6 +5,10 @@ body {
 	font-family: Arial, sans-serif;
 }
 
+#toast-container > div {
+    opacity:1;
+}
+
 a{
 	color: rgb(34, 36, 172);
 	text-decoration:underline;

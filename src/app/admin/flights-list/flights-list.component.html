@@ -23,15 +23,15 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let flight of Flights;let ind = index" (click)="select(flight,ind)"
+        <tr *ngFor="let flight of Flights;let ind = index"  (click)="select(flight,ind)" 
         [ngClass] = "{'highlight' : ind == selectedIndex}">
-        <td>{{ flight.takeoff_date.getDate() + "-" + flight.takeoff_date.toLocaleString('default', { month: 'short' }) + "-" +  flight.takeoff_date.getFullYear()}}</td>
-        <td>{{ flight.takeoff_date.getHours() + " : " + flight.takeoff_date.getMinutes() }}</td>
-        <td>{{ flight.takeoff_location }}</td>
-        <td>{{ flight.landing_location }}</td>
-        <td>{{ flight.price }}</td>
-        <td>{{ flight.capacity }}</td>
-        <td>{{ flight.available_seats }}</td>
+        <td *ngIf="flight.available_seats == 0">{{ flight.takeoff_date.getDate() + "-" + flight.takeoff_date.toLocaleString('default', { month: 'short' }) + "-" +  flight.takeoff_date.getFullYear()}}</td>
+        <td *ngIf="flight.available_seats == 0">{{ flight.takeoff_date.getHours() + " : " + flight.takeoff_date.getMinutes() }}</td>
+        <td *ngIf="flight.available_seats == 0">{{ flight.takeoff_location }}</td>
+        <td *ngIf="flight.available_seats == 0">{{ flight.landing_location }}</td>
+        <td *ngIf="flight.available_seats == 0">{{ flight.price }}</td>
+        <td *ngIf="flight.available_seats == 0">{{ flight.capacity }}</td>
+        <td *ngIf="flight.available_seats == 0">{{ flight.available_seats }}</td>
         </tr>
       </tbody>
     </table>
