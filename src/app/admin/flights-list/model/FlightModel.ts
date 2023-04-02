@@ -1,6 +1,6 @@
 export class Flight {
     id : string = '';
-    date : any = '';
+    date : string = '';
     time : string = '';
     takingOff : string = '';
     landing : string = '';
