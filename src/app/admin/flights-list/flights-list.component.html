@@ -25,13 +25,13 @@
       <tbody>
         <tr *ngFor="let flight of Flights;let ind = index" (click)="select(flight,ind)"
         [ngClass] = "{'highlight' : ind == selectedIndex}">
-        <td>{{ flight.date }}</td>
-        <td>{{ flight.date.getHours() + " : " + flight.date.getMinutes() }}</td>
-        <td>{{ flight.takingOff }}</td>
-        <td>{{ flight.landing }}</td>
-        <td>{{ flight.prize }}</td>
-        <td>{{ flight.seats }}</td>
-        <td>{{ flight.freeSeats }}</td>
+        <td>{{ flight.takeoff_date.getDate() + "-" + flight.takeoff_date.toLocaleString('default', { month: 'short' }) + "-" +  flight.takeoff_date.getFullYear()}}</td>
+        <td>{{ flight.takeoff_date.getHours() + " : " + flight.takeoff_date.getMinutes() }}</td>
+        <td>{{ flight.takeoff_location }}</td>
+        <td>{{ flight.landing_location }}</td>
+        <td>{{ flight.price }}</td>
+        <td>{{ flight.capacity }}</td>
+        <td>{{ flight.available_seats }}</td>
         </tr>
       </tbody>
     </table>

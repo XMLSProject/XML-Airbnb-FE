@@ -3,17 +3,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginLandingPageComponent } from './login-landing-page/login-landing-page.component';
 import { AdminModule } from './admin/admin.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RegisterComponent } from './register/register.component';
 import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { AuthInterception } from './model/auth.interceptor';
+import { AuthInterception } from './shared/model/auth.interceptor';
+import { FlightsComponent } from './shared/flights/flights.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
+import { ToastrModule } from 'ngx-toastr';
+import { NavBarComponent } from './shared/nav-bar-component/nav-bar-component.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FlightsComponent,
+    NavBarComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,8 +30,20 @@ import { AuthInterception } from './model/auth.interceptor';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    MatIconModule,
+    MatSortModule,
+    MatTableModule,
+    ToastrModule.forRoot()
   ],
- 
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterception,
+      multi: true,
+      
+    }
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

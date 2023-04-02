@@ -2,10 +2,10 @@ import { NumberSymbol, Time } from "@angular/common";
 
 export interface IListFlight {
     id:number;
-    date:Date;
-    takingOff:string;
-    landing:string;
-    prize:number;
-    seats:number;
-    freeSeats:number;
+    takeoff_date:Date;
+    takeoff_location:string;
+    landing_location:string;
+    price:number;
+    available_seats:number;
+    capacity:number;
 }

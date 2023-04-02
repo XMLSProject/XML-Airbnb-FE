@@ -1,0 +1,14 @@
+<nav>
+    
+    <div class="navbar-left">
+        <a routerLink= "/flights">Flights</a>
+        <a *ngIf="isAdmin && isLoged" routerLink="/admin/flights">Flights Control</a>
+        <a *ngIf="isAdmin && isLoged" routerLink="/admin/createFlight">Create Flight</a>
+        <a *ngIf="isUser && isLoged " routerLink="/user">User</a>
+    </div>
+    <div class="navbar-right">
+        <a *ngIf="!isLoged" (click)="ngOnInit()"  class= "login-logout" routerLink= "/" >Login</a>
+        <a *ngIf="isLoged" (click)="logoff()" class= "login-logout" routerLink= "/">Log off</a>
+        <a *ngIf="isLoged" class= "login-logout" routerLink= "/register">Register</a>
+    </div>
+</nav>
